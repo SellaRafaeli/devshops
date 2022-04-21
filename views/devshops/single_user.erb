@@ -5,6 +5,7 @@
 <%
   site = user[:website]
   tags = user[:tags].to_s.split(',').map {|v| v.strip }
+  # tags = user[:desc].to_s.scan(/\B#\w+/)
 %> 
 <style>
 .single_user {
