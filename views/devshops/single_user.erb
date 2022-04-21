@@ -4,7 +4,7 @@
 
 <%
   site = user[:website]
-  tags = user[:tags].to_s.split(',').map {|v| v.strip }
+  tags = user[:tags].to_s.split(/\s|,/).select {|v| v.present? }.map {|v| v.strip }
   # tags = user[:desc].to_s.scan(/\B#\w+/)
 %> 
 <style>
