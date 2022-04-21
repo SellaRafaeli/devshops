@@ -127,6 +127,6 @@ function filestackUpload(cb, opts = {}) {
 <% if pr[:css] %>
 <link rel="stylesheet" type="text/css" href="<%=pr[:css]%>">  
 <% end %>
-<%= erb :"layout/footer" if $prod || true %>           
+<%#= erb :"layout/footer" if $prod || true %>           
 </body>
 </html>

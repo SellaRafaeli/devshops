@@ -13,7 +13,7 @@ Bundler.require
 puts "loading dotenv..."
 Dotenv.load
 
-$app_name   = 'gutenweed'
+$app_name   = 'devshops'
 
 require './setup'
 require './my_lib'
@@ -137,8 +137,8 @@ get '/values' do
 end
 
 get '/search' do 
-	redirect '/'
-	# erb :'search/search', default_layout
+	# redirect '/'
+	erb :'devshops/search', default_layout
 end
 
 get '/accept_cookies' do 
@@ -170,7 +170,8 @@ get '/' do
 #	return redirect '/r/ny'
 	# erb :'search/search', default_layout
 	# 
-	erb :'home/cannabis_delivery', default_layout	
+	# erb :'home/cannabis_delivery', default_layout	
+	erb :'devshops/index', default_layout	
 	# 
 end
 
@@ -195,8 +196,9 @@ get '/zip/:code' do
 	code = 90210 if code == 123
 	data = ZipCodes.identify(code)
 	
+	use_redirect_here = false 
 	if data
-		if use_redirect_here = false 
+		if use_redirect_here == false 
 			url  = URI.escape "/dispensaries/#{data[:state_name]}/#{data[:city]}?zipcode=#{code}"
 			redirect url
 		else 

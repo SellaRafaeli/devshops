@@ -205,7 +205,7 @@ def add_user
 	if pr[:ajax] 
 		{msg: "signed up"}
 	else 
-		flash.message = "Welcome to good-weed.com, the online cannabis marketplace. Please set up your profile."
+		flash.message = "Welcome."
 		if pr[:event_title] #signup and create event at once
 			redirect "/casts/create?event_title=#{pr[:event_title]}"
 		else 

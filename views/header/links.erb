@@ -214,12 +214,12 @@
   <div class='top-nav'>
     <% if path!='/z' %>
     <span>
-      <a class='logo <%=use_client_logo ? 'client_logo' : ''%>' href='/'> 
+      <a class='logo <%=use_client_logo ? 'client_logo' : ''%>' href='/' style='display: none'> 
         <img src='<%=logo%>' style='height:30px'/>
         <% 
           msg = OUR_TAGLINES.sample
           msg = 'the online cannabis economy'
-          msg = 'social equity cannabis'
+          msg = 'hire professional developers.'
         %>
         <div class='sub_logo_msg'><%= msg %></div>
       </a>
@@ -246,6 +246,7 @@
     <!-- <a class='nowcast_color' href='/' style='color: #00b140'>
       Good-Weed
     </a>     -->
+    <a class='zbtn' href='/'>home</a>
     <% if cu %>
       <a class='user_name' href='/me'>
         <img class='links_profile_pic' src='<%=cu[:img_url]%>'>
@@ -258,6 +259,8 @@
       </a>     -->
     <% else %>      
       
+      
+
       <a class='' href='/login'>
       <%= !heb ? 'Login' : 'כניסה' %>
       </a>    
@@ -272,12 +275,12 @@
       
     <% end %>
 
-    <% if !is_homepage %>
+    <% if false && !is_homepage %>
     <a class='' href='/search'><i class='fa fa-search'></i> <%= 'search' %> </a>
     <% end %>
 
     <% if cu && !is_pro(cu) %>
-      <a class='' href='/pro'><i class='fa fa-plus'></i> <%= 'pro' %> </a>
+      <a class='noDisplay' href='/pro'><i class='fa fa-plus'></i> <%= 'pro' %> </a>
     <% end %>
     <!-- <a class='' href='/about'>about</a>
     <a class='' href='/contact'>contact</a>
@@ -291,13 +294,13 @@
       <a class='zbtn zbtn-primary zbtn-raised' href='/signup?ztype=seller'>      
     <% end %>
 
-      <i class='fas zfa-store' style='margin-right: 10px'></i> <%= !heb ? 'Sign up' : 'הרשמה' %></a>  
+      <i class='fas zfa-store' style='margin-right: 10px'></i> <%= !heb ? 'Sign Up' : 'הרשמה' %></a>  
     <% end %>    
     <!-- <a class='' href='/forum'><i class='fa fa-forum'></i> <%= 'forum' %> </a> -->
     <% if false %>
     <a class='' href='/vip'><i class='fa fa-question-smiley' style='margin-right: 5px'></i> <%= 'VIP chat' %> </a>
     <% end %>
-    <a class='' href='/help'><i class='fa fa-question-circle' style='margin-right: 5px'></i> <%= 'help' %> </a>
+    <a class='' href='/help'><i class='fa fa-question-circle noDisplay' style='margin-right: 5px'></i> <%= 'About' %> </a>
     <!-- <a class='' href='/influencers'><i class='fas fa-user-tie' style='margin-right: 5px'></i> <%= 'influencers' %> </a> -->
     
       <% ([] || ['usa', 'israel']).each do |country| %>
