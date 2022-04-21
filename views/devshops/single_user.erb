@@ -4,7 +4,7 @@
 
 <%
   site = user[:website]
-  tags = user[:tags].to_s.split(',')
+  tags = user[:tags].to_s.split(',').map {|v| v.strip }
 %> 
 <style>
 .single_user {
@@ -23,7 +23,7 @@
   margin-bottom: 10px;
 }
 </style>
-<div class='single_user'>
+<div class='single_user <% tags.each do |tag| %><%="tag-#{tag} "%><% end %>'>
   <div class='single_user_row'><b><%= user[:name] %></b> 
     <% if site.present? %>
     / <a href='<%= site%>'><%=site%></a>

@@ -23,7 +23,7 @@
 <div class='devshops'>
   <h1 class=ct> Hire professional devs & more. </h1>
   <div class=ct>
-    <input class='ct main_search' onkeyup=filter placeholder='tlv react $$' />
+    <input class='ct main_search' onkeyup=filterAll() placeholder='tlv react $$' />
     <div style='margin-bottom: 20px'><small style='font-style: italic; margin: 10px'>(try "tlv react"...)</small></div>
   </div>
   <% if false %>
@@ -34,3 +34,19 @@
 
   <%= erb :'/devshops/devshops_results' %>
 </div>
+
+<script>
+function filterAll() {
+  var val = $('.main_search').val();
+  
+  if (val) {
+    $('.single_user').hide();
+    $('.single_user.tag-'+val).show();
+  } else {
+    $('.single_user').show();
+  }
+
+
+  console.log('val',val)
+}
+</script>
