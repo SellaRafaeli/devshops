@@ -79,6 +79,26 @@
   </div>
   <br/>
 
+  <div class='display_flex' style='margin-top:20px'>
+    <%#= user.to_json %>
+    <label class='ztooltip'> Tags </label>
+    <input style='width:100%' name=tags placeholder='tag1, tag2, tag3-multiple-words, tag4' value="<%=user[:tags]%>" />
+  </div>
+
+  <hr/>
+  <br/>
+
+
+
+  <div class='display_flex' style='margin-top:20px'>
+    <%#= user.to_json %>
+    <label class='ztooltip'> Web Site </label>
+    
+    <input name=website value="<%=user[:website]%>" placeholder='Your site' />
+  </div>
+
+  <br/>
+  
     <% if false %>
   <div class='display_flex'>
     <label> Type </label>
@@ -127,7 +147,7 @@
   </div>
   <% end %>
 
-<% if is_seller %>  
+<% if false && is_seller %>  
   <div class='display_flex' style='margin-top:20px'>
     <%#= user.to_json %>
     <label class='ztooltip'> Address </label>
@@ -154,14 +174,6 @@
 
   <br/>
 
-  <div class='display_flex' style='margin-top:20px'>
-    <%#= user.to_json %>
-    <label class='ztooltip'> Web Site </label>
-    
-    <input name=website value="<%=user[:website]%>" placeholder='Your site' />
-  </div>
-
-  <br/>
 
   <!-- <div class='display_flex' style='margin-top:20px'>
     <%#= user.to_json %>
@@ -189,14 +201,7 @@
   </div>
   <% end %>
 
-  <div class='display_flex' style='margin-top:20px'>
-    <%#= user.to_json %>
-    <label class='ztooltip'> Tags </label>
-    <input style='width:100%' name=tags placeholder='tag1, tag2, tag3-multiple-words, tag4' value="<%=user[:tags]%>" />
-  </div>
-
-  <hr/>
-  <br/>
+  
 
   <% if false %>
   <div class='display_flex' style='margin-top:20px'>

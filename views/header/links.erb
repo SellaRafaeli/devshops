@@ -246,7 +246,19 @@
     <!-- <a class='nowcast_color' href='/' style='color: #00b140'>
       Good-Weed
     </a>     -->
-    <a class='zbtn' href='/'>home</a>
+    <style>
+      .logo-text {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .logo-slogan {
+
+      }
+    </style>
+    <a class='zbtn' href='/'>
+      <span class='logo-text'>okFreelance</span>
+      <span class='logo-slogan'>devs & more</span>
+    </a>
     <% if cu %>
       <a class='user_name' href='/me'>
         <img class='links_profile_pic' src='<%=cu[:img_url]%>'>
@@ -300,7 +312,9 @@
     <% if false %>
     <a class='' href='/vip'><i class='fa fa-question-smiley' style='margin-right: 5px'></i> <%= 'VIP chat' %> </a>
     <% end %>
-    <a class='' href='/help'><i class='fa fa-question-circle noDisplay' style='margin-right: 5px'></i> <%= 'About' %> </a>
+    <% if false%>
+    <a class='noD' href='/help'><i class='fa fa-question-circle noDisplay' style='margin-right: 5px'></i> <%= 'About' %> </a>
+    <% end %>
     <!-- <a class='' href='/influencers'><i class='fas fa-user-tie' style='margin-right: 5px'></i> <%= 'influencers' %> </a> -->
     
       <% ([] || ['usa', 'israel']).each do |country| %>
