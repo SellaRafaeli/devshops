@@ -24,5 +24,5 @@ def html_title
 	# return 'הופעות בזום'
 	#return 'Online Speakers and Performers'
 	#return 'מרצים אורחים לצוותי פיתוח' if heb
-  'Dev Hiring Baam'
+  'okfreelance'
 end

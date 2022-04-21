@@ -96,7 +96,7 @@ $(document).ready(layoutOnLoad);
 <%
   cookies_accepted = session[:cookies_accepted].present? rescue false
 %>
-<%= erb :'layout/cookies_banner' if !cookies_accepted %>
+<%# = erb :'layout/cookies_banner' if !cookies_accepted %>
 
 <script>
 window.filestackAPIkey = 'AHuQo4ciRwufvk1mRbnaNz';
