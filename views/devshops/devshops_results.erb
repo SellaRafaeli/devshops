@@ -1,0 +1,36 @@
+<% 
+  users = []
+  show  = false
+  q     = pr[:q]
+
+  if q
+    show = true
+    users = $users.all.select {|u| 
+      u.to_json.to_s.include?(q) 
+    }
+  end
+
+  show_all = true
+  if show_all 
+    users = $users.all.reverse
+  end
+
+  x=1
+%>
+
+<style>
+.nothing_found {
+  font-size: 14px;
+}
+</style>
+
+<% if show_all %>
+
+  <% if !users.any? %>
+  <div class='nothing_found'> Nothing found, sorry. </div>
+  <% else %>
+  <% users.each do |user| %>
+    <%= erb :'devshops/single_user', locals: {user: user} %>
+  <% end %>
+  <% end %>
+<% end %>

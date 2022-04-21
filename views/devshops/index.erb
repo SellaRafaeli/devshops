@@ -1,0 +1,36 @@
+<%
+  tags = ['ruby','javascript','react','vue','angular']
+%>
+
+<style>
+.devshops {
+  ztext-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+.main_search {
+  padding: 20px;
+  width: 300px;
+  font-size: 16px;
+  outline: none;
+  zborder-radius: 20px;
+  margin:10px auto;
+  text-align: left;
+}
+</style>
+
+
+<div class='devshops'>
+  <h1 class=ct> Hire professional devs & more. </h1>
+  <div class=ct>
+    <input class='ct main_search' onkeyup=filter placeholder='tlv react $$' />
+    <div style='margin-bottom: 20px'><small style='font-style: italic; margin: 10px'>(try "tlv react"...)</small></div>
+  </div>
+  <% if false %>
+  <form action=/ method=GET >
+    <input name=q class='main_search' value="<%=pr[:q]%>" autofocus placeholder='Senior Frontend React.js' />
+  </form>
+  <% end %>
+
+  <%= erb :'/devshops/devshops_results' %>
+</div>

@@ -1,0 +1,39 @@
+<%#= erb :'/brands/single_brand', locals: {user: user, idx: 0, reviews: []} %>
+
+<%#= user.to_json %>
+
+<%
+  site = user[:website]
+  tags = user[:tags].to_s.split(',')
+%> 
+<style>
+.single_user {
+  padding: 10px;
+  border:1px solid lightgrey;
+  margin-bottom: 20px;
+}
+.single_tag {
+  background-color: grey;
+  padding: 5px 10px;
+  margin-right:10px;
+  font-size: 14px;
+  color: white;
+}
+.single_user_row {
+  margin-bottom: 10px;
+}
+</style>
+<div class='single_user'>
+  <div class='single_user_row'><b><%= user[:name] %></b> 
+    <% if site.present? %>
+    / <a href='<%= site%>'><%=site%></a>
+    <% end %>
+  </div>
+  <div class='single_user_row'><%= user[:desc] %></div>
+  <div class='single_user_row'>
+    <% tags.each do |tag| %>
+      <span class='single_tag'><%= tag %> </span>
+    <% end %>
+  </div>
+  <div class='single_user_row'></div>
+</div>
